@@ -8,7 +8,6 @@ function logTask(task_num, solution) {
         `\n\n\n==================== Task 2.${task_num} ====================\n\n`
     );
     console.log(solution);
-    //console.log("\n\n==================================================\n");
 }
 
 // task 2.1
