@@ -1,7 +1,8 @@
 import fetchData from "./js/fetchData.js";
 import categorize from "./js/categorize.js";
 import findCartHighestValue from "./js/findCartHighestValue.js";
-import longestDistanceUsers from "./js/longestDistanceUsers.js";
+import { longestDistanceUsers } from "./js/longestDistanceUsers.js";
+import data_file from "./js/data.js";
 
 function logTask(task_num, solution) {
     console.log(
@@ -11,12 +12,20 @@ function logTask(task_num, solution) {
 }
 
 // task 2.1
-const data = await fetchData([
-    "https://fakestoreapi.com/users",
-    "https://fakestoreapi.com/carts",
-    "https://fakestoreapi.com/products",
-]);
-logTask(1, data);
+
+let data;
+
+try {
+    data = await fetchData([
+        "https://fakestoreapi.com/users",
+        "https://fakestoreapi.com/carts",
+        "https://fakestoreapi.com/products",
+    ]);
+    logTask(1, data);
+} catch (error) {
+    logTask(1, "ERROR!\n\n" + error);
+    data = data_file;
+}
 
 const users = data[0];
 const carts = data[1];

@@ -3,7 +3,7 @@ import data from "./data.js";
 import { jest } from "@jest/globals";
 
 // 10 seconds of time for this test
-jest.setTimeout(10000);
+jest.setTimeout(15000);
 
 const urls = [
     "https://fakestoreapi.com/users",

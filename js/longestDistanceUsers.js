@@ -3,21 +3,22 @@
 // find two users living furthest away from each other
 //
 
-const kms = 6378.8;
+// ~Earth radius
+const kms = 6371.0;
 const miles = 3963.0;
 
-function radiansLatLong(a) {
+function toRadians(a) {
     return {
-        lat: a.lat / (180 / Math.PI),
-        long: a.long / (180 / Math.PI),
+        lat: parseFloat(a.lat) / (180 / Math.PI),
+        long: parseFloat(a.long) / (180 / Math.PI),
     };
 }
 
 function distance(a, b) {
-    a = radiansLatLong(a);
-    b = radiansLatLong(b);
+    a = toRadians(a);
+    b = toRadians(b);
 
-    const d = Math.acos(
+    const d = kms * Math.acos(
         Math.sin(a.lat) * Math.sin(b.lat) +
             Math.cos(a.lat) * Math.cos(b.lat) * Math.cos(b.long - a.long)
     );
@@ -48,4 +49,4 @@ function longestDistanceUsers(users) {
     return [users[indexes[0]], users[indexes[1]]];
 }
 
-export default longestDistanceUsers;
+export { longestDistanceUsers, distance, toRadians };
