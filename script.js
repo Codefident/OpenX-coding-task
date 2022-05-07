@@ -1,7 +1,7 @@
 import fetchData from "./js/fetchData.js";
 import categorize from "./js/categorize.js";
 import findCartHighestValue from "./js/findCartHighestValue.js";
-import longestDistanceUsers from "./js/distance.js";
+import longestDistanceUsers from "./js/longestDistanceUsers.js";
 
 function logTask(task_num, solution) {
     console.log(

@@ -1,3 +1,8 @@
+//
+// task 2.4
+// find two users living furthest away from each other
+//
+
 const kms = 6378.8;
 const miles = 3963.0;
 

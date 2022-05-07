@@ -1,4 +1,4 @@
-import longestDistanceUsers from "./distance.js";
+import longestDistanceUsers from "./longestDistanceUsers.js";
 import data from "./data.js";
 
 test("returns two users living furthest away from each other", () => {
